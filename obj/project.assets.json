@@ -3186,11 +3186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EFCore\\EFCore.csproj",
+      "projectUniqueName": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj",
       "projectName": "EFCore",
-      "projectPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EFCore\\EFCore.csproj",
+      "projectPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj",
       "packagesPath": "C:\\Users\\EuTay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EFCore\\obj\\",
+      "outputPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
