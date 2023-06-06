@@ -1,6 +1,7 @@
 ﻿using System;
 using EFCore.Data;
 using EFCore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCore {
     internal class Program
@@ -10,9 +11,9 @@ namespace EFCore {
           using(var context = new EFCoreDataContext())
           {
                             //CREATE
-            var tag = new Tag{Name = "Front", Slug = "End"};
-            context.Tags.Add(tag);
-            context.SaveChanges();
+            // var tag = new Tag{Name = "Front", Slug = "End"};
+            // context.Tags.Add(tag);
+            // context.SaveChanges();
 
                             //UPDATE
             // var upTag = context.Tags.FirstOrDefault(x => x.Name == "Front");
@@ -23,10 +24,18 @@ namespace EFCore {
 
                                 //REMOVE
             // var DelTag = context.Tags.FirstOrDefault(x => x.Name == "Front");
-            // DelTag.Slug = "Angular";
 
             // context.Remove(DelTag);
             // context.SaveChanges();
+
+            var listTags = context
+                          .Tags
+                          .AsNoTracking()// Só leitura, não rastreia(nao usa para alterações)
+                          .ToList();
+
+            foreach(var tag in listTags){
+              System.Console.WriteLine(tag.Name);
+            } 
           }
         }
     }
