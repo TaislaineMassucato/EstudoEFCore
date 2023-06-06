@@ -1,8 +1,5 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace EFCore.Models
 {
-    [Table("[Role]")]
     public class Role
     {
         public int Id { get; set; }
