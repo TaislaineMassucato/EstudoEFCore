@@ -3,7 +3,8 @@ using EFCore.Data;
 using EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore {
+namespace EFCore
+ {
     internal class Program
     {
         static void Main(string[] args)
@@ -11,33 +12,31 @@ namespace EFCore {
           using(var context = new EFCoreDataContext())
           {
                             //CREATE
-            // var tag = new Tag{Name = "Front", Slug = "End"};
-            // context.Tags.Add(tag);
-            // context.SaveChanges();
+           var tag = new Tag{Name = "Devops", Slug = "Linux"};
+           context.Tags.Add(tag);
+           context.SaveChanges();
 
                             //UPDATE
-            // var upTag = context.Tags.FirstOrDefault(x => x.Name == "Front");
-            // upTag.Slug = "Angular";
+            var UpTag = context.Tags.FirstOrDefault(x => x.Name == "Devops");
+            UpTag.Slug = "Linux / DEV";
 
-            // context.Update(upTag);
-            // context.SaveChanges();
+            context.SaveChanges();
 
-                                //REMOVE
-            // var DelTag = context.Tags.FirstOrDefault(x => x.Name == "Front");
+                            //DELETE
+           var delTag = context.Tags.FirstOrDefault(x => x.Name == "NET");
+           context.Remove(delTag);
+           context.SaveChanges();
 
-            // context.Remove(DelTag);
-            // context.SaveChanges();
+                            //ToList
+          var listTags = context.Tags.AsNoTracking().ToList();
 
-            var listTags = context
-                          .Tags
-                          .AsNoTracking()// Só leitura, não rastreia(nao usa para alterações)
-                          .ToList();
-
-            foreach(var tag in listTags){
-              System.Console.WriteLine(tag.Name);
-            } 
-          }
+            foreach(var tagg in listTags)
+            {
+              System.Console.WriteLine(tagg.Name);
+            }
+          } 
         }
     }
-}
+  }
+
 
