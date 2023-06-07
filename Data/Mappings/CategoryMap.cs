@@ -8,7 +8,16 @@ namespace EstudoEFCore.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
+            //Tabela
             builder.ToTable("Category");
+
+            //Chave Primaria
+            builder.HasKey(X => X.Id);
+
+            //Identity
+            builder.Property(x => x.Id)
+                    .ValueGeneratedOnAdd()
+                    .UseIdentityColumn(); 
         }
     }
 }
