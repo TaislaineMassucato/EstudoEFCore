@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "EFCore/1.0.0": {
+      "Blog/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
         },
         "runtime": {
-          "EFCore.dll": {}
+          "Blog.dll": {}
         }
       },
       "Azure.Core/1.24.0": {
@@ -668,7 +668,7 @@
     }
   },
   "libraries": {
-    "EFCore/1.0.0": {
+    "Blog/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

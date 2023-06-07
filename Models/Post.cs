@@ -1,4 +1,7 @@
-namespace EFCore.Models
+using System;
+using System.Collections.Generic;
+
+namespace Blog.Models
 {
     public class Post
     {
@@ -12,8 +15,6 @@ namespace EFCore.Models
         public Category Category { get; set; }
         public User Author { get; set; }
 
-        public List<Tag> Tags { get; set; } = new List<Tag>();
-
+        public List<Tag> Tags { get; set; }
     }
 }
-

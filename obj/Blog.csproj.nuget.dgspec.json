@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj": {}
+    "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\Blog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj": {
+    "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\Blog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj",
-        "projectName": "EFCore",
-        "projectPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\Blog.csproj",
+        "projectName": "Blog",
+        "projectPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\Blog.csproj",
         "packagesPath": "C:\\Users\\EuTay\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\EuTay\\OneDrive\\Área de Trabalho\\Dev\\Balta.IO\\EstudoEFCore\\obj\\",
         "projectStyle": "PackageReference",

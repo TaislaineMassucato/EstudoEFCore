@@ -1,4 +1,6 @@
-namespace EFCore.Models
+using System.Collections.Generic;
+
+namespace Blog.Models
 {
     public class User
     {
@@ -6,12 +8,11 @@ namespace EFCore.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public string Bio { get; set; }
         public string Image { get; set; }
         public string Slug { get; set; }
+        public string Bio { get; set; }
 
-        public List<Role> Roles { get; set; } = new List<Role>();
-         public List<Post> Posts { get; set; } = new List<Post>();
-
+        public IList<Post> Posts { get; set; }
+        public IList<Role> Roles { get; set; }
     }
 }

@@ -1,67 +1,66 @@
+﻿using System.Collections.Generic;
+using Blog.Models;
 using Microsoft.EntityFrameworkCore;
-using EFCore.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EstudoEFCore.Data.Mappings
+namespace Blog.Data.Mappings
 {
     public class UserMap : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            //Tabela
+            // Tabela
             builder.ToTable("User");
 
-            //Chave Primaria
+            // Chave Primária
             builder.HasKey(x => x.Id);
 
-            //Identity
+            // Identity
             builder.Property(x => x.Id)
-                    .ValueGeneratedOnAdd()
-                    .UseIdentityColumn();
+                .ValueGeneratedOnAdd()
+                .UseIdentityColumn();
 
-            //colunas
+            // Propriedades
             builder.Property(x => x.Name)
-                     .HasColumnName("Name")
-                     .HasColumnType("NVARCHAR")
-                    .HasMaxLength(80)
-                   
-                    .IsRequired();
+                .IsRequired()
+                .HasColumnName("Name")
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(80);
 
-            builder.Property(x => x.Email)
-                    .HasColumnName("Email")
-                    .HasColumnType("VARCHAR")
-                    .HasMaxLength(80)
-                    .IsRequired();
+            builder.Property(x => x.Bio);
+            builder.Property(x => x.Email);
+            builder.Property(x => x.Image);
+            builder.Property(x => x.PasswordHash);
 
-            builder.Property(x => x.PasswordHash)
-                    .HasColumnName("PasswordHash")
-                   .HasColumnType("VARCHAR")
-                   .HasMaxLength(255)
-                   .IsRequired();
-
-            builder.Property(x => x.Bio)
-                    .HasColumnName("Bio")
-                    .HasColumnType("TEXT")
-                    .IsRequired();
-            
-            builder.Property(x => x.Image)
-                    .HasColumnName("Image")
-                    .HasColumnType("VARCHAR")
-                    .HasMaxLength(2000)
-                    .IsRequired();
-            
-            
             builder.Property(x => x.Slug)
-                    .HasColumnType("VARCHAR")
-                    .HasMaxLength(80)
-                    .HasColumnName("Slug")
-                    .IsRequired();
-                    
-            //Index (Indices)
-            builder.HasIndex(x => x.Slug, "IX_User_Slug")
-                    .IsUnique();
+                .IsRequired()
+                .HasColumnName("Slug")
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(80);
 
+            // Índices
+            builder
+                .HasIndex(x => x.Slug, "IX_User_Slug")
+                .IsUnique();
+
+            // Relacionamentos
+            builder
+                .HasMany(x => x.Roles)
+                .WithMany(x => x.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserRole",
+                    role => role
+                        .HasOne<Role>()
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .HasConstraintName("FK_UserRole_RoleId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    user => user
+                        .HasOne<User>()
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .HasConstraintName("FK_UserRole_UserId")
+                        .OnDelete(DeleteBehavior.Cascade));
         }
     }
-
 }
