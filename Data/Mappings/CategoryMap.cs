@@ -31,6 +31,11 @@ namespace EstudoEFCore.Data.Mappings
                     .HasColumnName("Name") //Nome Coluna
                     .HasColumnType("VARCHAR") //Tipo coluna
                     .HasMaxLength(80); //Max caracter
+
+            //Index (Indices)
+            builder.HasIndex(x => x.Slug, "IX_Category_Slug")
+                    .IsUnique();
+            
         }
     }
 }
