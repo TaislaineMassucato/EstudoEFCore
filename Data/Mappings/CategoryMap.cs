@@ -18,6 +18,19 @@ namespace EstudoEFCore.Data.Mappings
             builder.Property(x => x.Id)
                     .ValueGeneratedOnAdd()
                     .UseIdentityColumn(); 
+
+            //Propriedades
+            builder .Property(x => x.Name)
+                    .IsRequired() //Not Null
+                    .HasColumnName("Name") //Nome Coluna
+                    .HasColumnType("NVARCHAR") //Tipo coluna
+                    .HasMaxLength(80); //Max caracter
+
+            builder .Property(x => x.Slug)
+                    .IsRequired() //Not Null
+                    .HasColumnName("Name") //Nome Coluna
+                    .HasColumnType("VARCHAR") //Tipo coluna
+                    .HasMaxLength(80); //Max caracter
         }
     }
 }
